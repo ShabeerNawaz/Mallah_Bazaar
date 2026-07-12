@@ -1,6 +1,6 @@
-import React, { useState, useMemo, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import {
-  Search, ShoppingCart, User, Menu, X, Star, Plus, Minus, Trash2,
+  Search, ShoppingCart, User, X, Star, Plus, Minus, Trash2,
   LayoutGrid, Package, Users, Receipt, TrendingUp, Pencil, Check,
   ChevronRight, Home as HomeIcon, Zap, Sparkles, Smartphone, ShieldCheck, Truck,
   BadgePercent, LogOut, Eye, EyeOff, Filter
@@ -704,7 +704,7 @@ const AdminView = ({ products, setProducts, orders, users, logout, go }) => {
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             {products.map((p) => (
               <TagCard key={p.id} style={{ padding: 12, display: "flex", alignItems: "center", gap: 14 }}>
-                <img src={p.img} style={{ width: 48, height: 48, objectFit: "cover" }} />
+                <img src={p.img} alt={p.name} style={{ width: 48, height: 48, objectFit: "cover" }} />
                 <div style={{ flex: 1, minWidth: 160 }}>
                   <div style={{ fontFamily: "Inter,sans-serif", fontWeight: 600, fontSize: 13 }}>{p.name}</div>
                   <div style={{ fontFamily: "Inter,sans-serif", fontSize: 11.5, color: C.muted }}>{CATEGORIES.find(c => c.id === p.cat)?.name} · stock {p.stock}</div>
